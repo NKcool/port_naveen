@@ -1,0 +1,39 @@
+{% extends 'portfolio/base_template.html' %}
+{% load static %}
+{% block pagecontent %}
+
+
+<div class="row justify-content-center my-3">
+  <div class="col-5">
+    <img src="{% static 'portfolio/port nk.jpg' %}" class="img-fluid">
+  </div>
+</div>
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-9 text-center">
+    <h1 id="hometext" class="font-weight-bold">Naveen kewat is a web developer currently doing B-tec at LNCT bhopal😊</h1>
+  </div>
+</div>
+
+<h1 class="font-weight-bold">Portfolio</h1>
+<hr>
+<div class="row">
+  {% for project in projects %}
+  <div class="col-lg-4 col-md-6">
+
+    {% if project.url %}
+    <a href="{{ project.url }}" target="_blank">
+      <img src="{{ project.image.url }}" class="img-fluid mb-2">
+    </a>
+    {% else %}
+
+    <img src="{{ project.image.url }}" class="img-fluid mb-2">
+    {% endif %}
+    <h3>{{ project.tital }}</h3>
+    <p>{{ project.discription }}</p>
+
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

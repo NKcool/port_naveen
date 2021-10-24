@@ -1,0 +1,13 @@
+{% extends 'portfolio/base_template.html' %}
+
+{% block pagecontent %}
+
+<h1 class="text-center mt-5" id="blogdetailtitle">{{ blog.blog_tital }}</h1>
+
+<h5 class="text-center text-muted mb-5">{{ blog.date_time|date:'F jS Y' }}</h5>
+
+
+{{ blog.discription }}
+
+
+{% endblock %}
